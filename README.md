@@ -1,7 +1,9 @@
 # Summary
-Golang http web server running by default on port 8080 that is intended for testing.  Prometheus formatted metrics available at "/metrics" with key "total_request_count".
+Golang http web server running by default on port 8080 that is intended for testing.  
 
-Image is based on busybox:1.36.1-glibc, is about ~11Mb because it takes advantage of multi-stage building
+Prometheus formatted metrics available at "/metrics" with key "total_request_count".
+
+Image is based on busybox:1.36.1-glibc, is about ~16Mb because it takes advantage of multi-stage building
 
 # Pulling image from GitHub Container Registry
 
