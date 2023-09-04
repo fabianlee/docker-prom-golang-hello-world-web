@@ -1,4 +1,4 @@
-# Summary
+# GoLang HTTP web server with Prometheus metrics
 
 Golang http web server running by default on port 8080 that is intended for testing.  
 
