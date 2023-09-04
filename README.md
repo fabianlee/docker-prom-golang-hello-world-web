@@ -6,7 +6,7 @@ Prometheus formatted metrics available at "/metrics" with key "total_request_cou
 
 Kubernetes compatible health check available at "/healthz".
 
-Final image is based on busybox:1.36.1-glibc totaling about ~16Mb because it takes advantage of multi-stage building.
+Final image is based on busybox:1.36.1-glibc totaling ~16Mb because it takes advantage of multi-stage building.
 
 # Pulling image from GitHub Container Registry
 
