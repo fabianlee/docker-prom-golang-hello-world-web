@@ -2,26 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: golang-prom-hello-world-web
+  name: prom-golang-hello-world-web
   # allow for override: kubectl -n <ns> apply ...
   #namespace: default
 spec:
   selector:
     matchLabels:
-      app: golang-prom-hello-world-web
+      app: prom-golang-hello-world-web
   replicas: 1
   template:
     metadata:
       labels:
-        app: golang-prom-hello-world-web
+        app: prom-golang-hello-world-web
       annotations:
         sidecar.istio.io/inject: "false"
 
     spec:
 
       containers:
-      - name: golang-prom-hello-world-web
-        image: fabianlee/docker-prom-golang-hello-world-web:latest
+      - name: prom-golang-hello-world-web
+        image: ghcr.io/fabianlee/docker-prom-golang-hello-world-web:latest
 
         # resource limits
         resources:
@@ -66,10 +66,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: golang-prom-hello-world-web-service
+  name: prom-golang-hello-world-web-service
   #namespace: default
   labels:
-    app: golang-prom-hello-world-web
+    app: prom-golang-hello-world-web
 spec:
   ports:
   # port=available to other containers
@@ -79,4 +79,4 @@ spec:
     targetPort: 8080
     protocol: TCP
   selector:
-    app: golang-prom-hello-world-web
+    app: prom-golang-hello-world-web

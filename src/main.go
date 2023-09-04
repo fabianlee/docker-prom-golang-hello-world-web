@@ -78,8 +78,8 @@ func handleApp(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "Hello, %s\n", messageTo)
 
     // writes count and path
-    mainMsgFormat := "request %d %s %s\n"
-    //log.Printf(mainMsgFormat, promRequestCounter.Counter.GetValue(), r.Method, r.URL.Path)
+    mainMsgFormat := "request %f %s %s\n"
+    log.Printf(mainMsgFormat, getMetricValue(promRequestCounter), r.Method, r.URL.Path)
     fmt.Fprintf(w, mainMsgFormat, getMetricValue(promRequestCounter), r.Method, r.URL.Path)
 
     // 'Host' header is promoted to Request.Host field and removed from Header map
