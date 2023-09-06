@@ -27,7 +27,7 @@ var BuildTime string
 // Prometehus request counter for this container
 var promRequestCounter = prometheus.NewCounter(
    prometheus.CounterOpts{
-       Name: "total_request_count",
+       Name: "request_count_total", # end with '_total' intentionally to align with prometheus-adapter for HPA
        Help: "No of total request handled by container",
    },
 )
